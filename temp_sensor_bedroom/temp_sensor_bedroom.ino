@@ -10,7 +10,7 @@
 #define DHTPIN 4
 
 int publishDelay = 60; // Seconds of delay
-int forceSend = 10; // Force to send each x minutes
+int forceSend = 5; // Force to send each x minutes
 
 long lastMsg = 0;
 long lastForceMsg = 0;
@@ -20,7 +20,7 @@ bool newConnection = true;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
-DHT dht(DHTPIN, DHTTYPE, 11);
+DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
   Serial.begin(115200);
